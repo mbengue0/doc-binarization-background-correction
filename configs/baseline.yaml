@@ -1,0 +1,18 @@
+# Baseline configuration. PROVISIONAL values: every number below is a
+# starting point to be replaced by development-set tuning, then frozen
+# before any final-test run.
+thresholds:
+  otsu: {}
+  sauvola: {window: 25, k: 0.2}
+  niblack: {window: 25, k: 0.2}
+
+corrections: [closing, median, rolling_ball]
+
+# Fixed sizing: one radius (px) for every image.
+fixed_radius: {closing: 15, median: 15, rolling_ball: 15}
+
+# Automatic sizing: radius = ceil(factor * estimated stroke width).
+# 3.5 for closing follows Xiong et al. (2021), who report using ~3.5x stroke width.
+auto_factor: {closing: 3.5, median: 3.5, rolling_ball: 3.5}
+
+timing_repeats: 3

@@ -1,0 +1,14 @@
+# Datasets are downloaded by scripts/prepare_dibco.py (not redistributed here)
+data/dibco/*/
+data/sd7k/*/
+data/synthetic/
+!data/dibco/manifest.csv
+raw_downloads/
+dibco_extracted/
+# Large regenerable outputs
+results/**/binarized/
+results/**/scores.csv
+results/*.log
+__pycache__/
+.pytest_cache/
+*.pyc

@@ -1,0 +1,35 @@
+config:
+  thresholds:
+    otsu: {}
+    sauvola:
+      window: 25
+      k: 0.2
+    niblack:
+      window: 25
+      k: 0.2
+  corrections:
+  - closing
+  - median
+  - rolling_ball
+  fixed_radius:
+    closing: 15
+    median: 15
+    rolling_ball: 15
+  auto_factor:
+    closing: 3.5
+    median: 3.5
+    rolling_ball: 3.5
+  timing_repeats: 3
+args:
+  images: data/synthetic/img
+  gt: data/synthetic/gt
+  config: configs/baseline.yaml
+  out: results/smoke_synthetic
+python: 3.13.18
+platform: Linux-6.18.44-fc-v726-x86_64-with-glibc2.39
+packages:
+  numpy: 2.5.3
+  scipy: 1.18.1
+  scikit-image: 0.26.0
+  opencv-python-headless: 5.0.0.93
+  doxapy: 0.9.9

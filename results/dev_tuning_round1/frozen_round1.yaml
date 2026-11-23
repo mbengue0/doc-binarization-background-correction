@@ -1,0 +1,63 @@
+selected_on: 86 development images, mean F-measure
+baselines:
+  otsu: {}
+  sauvola:
+    w: 51
+    k: 0.2
+  niblack:
+    w: 101
+    k: 1.0
+corrected:
+  closing+otsu:
+    threshold_params: {}
+    fixed_radius: 12
+    auto_factor: 4.0
+  closing+sauvola:
+    threshold_params:
+      w: 101
+      k: 0.2
+    fixed_radius: 8
+    auto_factor: 3.0
+  closing+niblack:
+    threshold_params:
+      w: 101
+      k: 1.0
+    fixed_radius: 12
+    auto_factor: 4.0
+  median+otsu:
+    threshold_params: {}
+    fixed_radius: 30
+    auto_factor: 5.0
+  median+sauvola:
+    threshold_params:
+      w: 101
+      k: 0.2
+    fixed_radius: 20
+    auto_factor: 5.0
+  median+niblack:
+    threshold_params:
+      w: 101
+      k: 1.0
+    fixed_radius: 30
+    auto_factor: 5.0
+  rolling_ball+otsu:
+    threshold_params: {}
+    fixed_radius: 8
+    auto_factor: 2.0
+  rolling_ball+sauvola:
+    threshold_params:
+      w: 51
+      k: 0.2
+    fixed_radius: 8
+    auto_factor: 3.0
+  rolling_ball+niblack:
+    threshold_params:
+      w: 101
+      k: 1.0
+    fixed_radius: 8
+    auto_factor: 2.0
+main_comparison:
+  pipeline: closing+sauvola
+  metric: fm
+  test_set: DIBCO 2017
+  test: paired Wilcoxon signed-rank, two-sided, zero_method=zsplit
